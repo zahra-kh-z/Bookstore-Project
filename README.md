@@ -4,6 +4,11 @@ This code write by Zahra Khalifeh-Zadeh for Bookstore-Project project. at maktab
 *Created on 1400-05-06
 
 Chapter 3: Bookstore Project
-, Chapter 4: Pages App
+
+Chapter 4: Pages App
+
+Chapter 5: User Registration
+
+Chapter 6: Static Assets
 
 Book: Django for Professionals Production websites with Python & Django,  William S. Vincent
