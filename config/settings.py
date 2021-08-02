@@ -30,17 +30,24 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth',  # Yoohoo!!!!
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party
+    'crispy_forms',  # install django-crispy-forms==1.9.2
 
     # Local
     'accounts',  # new
     'pages',  # new
 ]
 
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'  # new
 AUTH_USER_MODEL = 'accounts.CustomUser'  # new
 
 MIDDLEWARE = [
@@ -94,7 +101,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -130,6 +136,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)  # new
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))  # new
+STATICFILES_FINDERS = [  # new
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
