@@ -6,7 +6,8 @@ from .forms import CustomUserCreationForm
 
 # Create your views here.
 
-class SignupPageView(generic.CreateView):
-    form_class = CustomUserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'registration/signup.html'
+# this view created solely for our hand-written sign up page, after use django-allauth can delete
+# class SignupPageView(generic.CreateView):
+#     form_class = CustomUserCreationForm
+#     success_url = reverse_lazy('login')
+#     template_name = 'registration/signup.html'

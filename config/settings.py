@@ -35,20 +35,48 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # new for Django’s sites framework
 
     # Third-party
     'crispy_forms',  # install django-crispy-forms==1.9.2
+    'allauth',  # new
+    'allauth.account',  # pip install django-allauth==0.42.0
 
     # Local
     'accounts',  # new
     'pages',  # new
 ]
 
-# django-crispy-forms
-CRISPY_TEMPLATE_PACK = 'bootstrap4' # new
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'  # new
+# django-crispy-form
+CRISPY_TEMPLATE_PACK = 'bootstrap4'  # new
 AUTH_USER_MODEL = 'accounts.CustomUser'  # new
+
+# django-allauth config
+LOGIN_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'  # new
+ACCOUNT_LOGOUT_REDIRECT = 'home'  # new
+SITE_ID = 1  # if add 2 site then ID=2
+# used when Django attempts to authenticate a user.
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    # specific authentication options, switch over to using login via e-mail in a moment
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+# if we don’t yet have a SMTP server, Django output any emails to the command line console instead of smtp
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# after added above change , run python manage.py migrate
+
+# for “Remember Me” box option dont show in login page.
+# ACCOUNT_SESSION_REMEMBER = True  # new
+
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False  # new
+
+# for Email Only Login
+ACCOUNT_USERNAME_REQUIRED = False  # new
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # new
+ACCOUNT_EMAIL_REQUIRED = True  # new
+ACCOUNT_UNIQUE_EMAIL = True  # new
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
