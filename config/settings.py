@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # Local
     'accounts',  # new
     'pages',  # new
+    'books',  # new
 ]
 
 # django-crispy-form
@@ -135,7 +136,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'postgres_10',
         'USER': 'postgres',
         'PASSWORD': 'zahra1399',
         'HOST': '127.0.0.1',

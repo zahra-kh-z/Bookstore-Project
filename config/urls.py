@@ -26,6 +26,7 @@ urlpatterns = [
 
     # Local apps
     path('', include('pages.urls')),
+    path('books/', include('books.urls')),  # new
 
     # after use django-allauth, we can delete the URL path for our accounts app,
     # and we can delete accounts/urls.py and accounts/views.py
