@@ -15,4 +15,6 @@ Chapter 7: Advanced User Registration
 
 Chapter 9: Email
 
+Chapter 10: Books App
+
 Book: Django for Professionals Production websites with Python & Django,  William S. Vincent
