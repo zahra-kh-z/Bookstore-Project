@@ -63,7 +63,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 # if we don’t yet have a SMTP server, Django output any emails to the command line console instead of smtp
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # if use email service like SendGrid, MailGun, use SMTP
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
@@ -83,6 +83,14 @@ ACCOUNT_UNIQUE_EMAIL = True  # new
 
 # email was from webmaster@localhost, can change with DEFAULT_FROM_EMAIL
 DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
+
+# use gmail for email service
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # new
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'zahra.kh2005@gmail.com'
+EMAIL_HOST_PASSWORD = 'wkofzkrxnwjzbymk'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
