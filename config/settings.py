@@ -65,6 +65,9 @@ AUTHENTICATION_BACKENDS = (
 # if we don’t yet have a SMTP server, Django output any emails to the command line console instead of smtp
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# if use email service like SendGrid, MailGun, use SMTP
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
+
 # after added above change , run python manage.py migrate
 
 # for “Remember Me” box option dont show in login page.
@@ -77,6 +80,9 @@ ACCOUNT_USERNAME_REQUIRED = False  # new
 ACCOUNT_AUTHENTICATION_METHOD = 'email'  # new
 ACCOUNT_EMAIL_REQUIRED = True  # new
 ACCOUNT_UNIQUE_EMAIL = True  # new
+
+# email was from webmaster@localhost, can change with DEFAULT_FROM_EMAIL
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

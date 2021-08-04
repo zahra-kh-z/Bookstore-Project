@@ -11,4 +11,6 @@ Chapter 5: User Registration
 
 Chapter 6: Static Assets
 
+Chapter 7: Advanced User Registration
+
 Book: Django for Professionals Production websites with Python & Django,  William S. Vincent
